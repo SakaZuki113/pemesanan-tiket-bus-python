@@ -6,7 +6,7 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 - [@username2](https://github.com/username2)
 - [@username3](https://github.com/username3)
 - [@username4](https://github.com/username4)
-- [@username5](https://github.com/username5)
+- [@rafiyandi12](https://github.com/rafiyandi12)
 - [@SakaZuki113](https://github.com/SakaZuki113)
 
 ---
@@ -16,16 +16,17 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 
 ---
 
-**👨‍🏫 Nama Dosen:** [Nama Dosen]  
+**👨‍🏫 Nama Dosen: Niki Ratama, S.Kom., M.Kom** 
+
 **👥 Nama Anggota Kelompok:**
 
-- <span style="color:blue;">Nama Anggota 1</span>
-- <span style="color:green;">Nama Anggota 2</span>
-- <span style="color:red;">Nama Anggota 3</span>
-- <span style="color:orange;">Nama Anggota 4</span>
-- <span style="color:purple;">Rafiyandi</span>
-- <span style="color:brown;">Satria Nugraha</span>
+| Nomor | Nama Anggota yang Bekerja | Tugas | Tanggal Selesai |
+|-------|---------------------------| ------------------ | ------------------ |
+| 1     | Nama Anggota 1            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
+| 2     | Nama Anggota 2            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
+| 3     | Nama Anggota 3            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
+| 4     | Nama Anggota 4            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
+| 5     | Rafiyandi                 | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
+| 6     | Satria Nugraha            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
 
 ---
-
-Terima kasih telah membaca informasi proyek ini! Jika ada pertanyaan, silakan hubungi kami.
