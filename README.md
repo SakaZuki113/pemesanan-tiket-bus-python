@@ -30,3 +30,5 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 | 6     | Satria Nugraha            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
 
 ---
+
+**© 2024 Kelompok 2 - UAS Projek - Universitas Pamulang**
