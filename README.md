@@ -23,7 +23,7 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 - <span style="color:green;">Nama Anggota 2</span>
 - <span style="color:red;">Nama Anggota 3</span>
 - <span style="color:orange;">Nama Anggota 4</span>
-- <span style="color:purple;">Nama Anggota 5</span>
+- <span style="color:purple;">Rafiyandi</span>
 - <span style="color:brown;">Satria Nugraha</span>
 
 ---
