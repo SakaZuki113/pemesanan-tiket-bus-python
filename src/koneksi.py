@@ -17,5 +17,6 @@ def create_tables():
     )
     ''')
     db.commit()
-
+    # CATATAN BUAT YANG KEBAGIAN DATABASE, BUAT CURSOR EXECUTE SETELAH COMMENT INI !
+    
 create_tables()
