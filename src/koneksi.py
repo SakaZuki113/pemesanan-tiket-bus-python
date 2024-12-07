@@ -16,7 +16,7 @@ def create_tables():
         status_logged INTEGER DEFAULT 0 CHECK (status_logged IN (0, 1))
     )
     ''')
-    db.commit()
     # CATATAN BUAT YANG KEBAGIAN DATABASE, BUAT CURSOR EXECUTE SETELAH COMMENT INI !
     
+    db.commit()
 create_tables()
