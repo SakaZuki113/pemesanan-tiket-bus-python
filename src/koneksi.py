@@ -5,7 +5,6 @@ def koneksi_db():
     cursor = db.cursor()
     return db, cursor
 
-
 def create_tables():
     db, cursor = koneksi_db()
     cursor.execute('''
