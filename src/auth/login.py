@@ -1,80 +1,77 @@
-from koneksi import koneksi_db
+from src.koneksi import koneksi_db
+from time import sleep
 
-def login(email, password):
+def login_menu():
+    print("="*10)
+    print("Silahkan dipilih menu ini.")
+    print("1. Login")
+    print("2. Register")
+    print("3. Keluar dari Aplikasi")
+    pil = int(input("Silahkan pilih (1/2/3): "))
+    return pil
 
-    db, cursor = koneksi_db()  # Mendapatkan koneksi dan cursor
+def login():
+    db, cursor = koneksi_db()
 
-    cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
+    while True:
+        email = input("Masukkan Email terdaftar: ")
+        password = input("Masukkan Password: ")
 
-    user = cursor.fetchone()
+        cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
+        query = cursor.fetchone()
 
-    db.close()  # Menutup koneksi setelah selesai
+        if query:
+            print("Berhasil login, dialihkan ke halaman dashboard.")
+            db.close()
+            return query
+        else:
+            print("Email atau password salah, silahkan coba kembali!")
 
+def register():
+    db, cursor = koneksi_db()
+    while True:
+        nama = input("Masukkan nama lengkap: ")
+        email = input("Masukkan Email: ")
 
-    if user:
+        cursor.execute("SELECT * FROM users WHERE email = ?", (email, ))
+        query = cursor.fetchone()
 
-        print("Login berhasil!")
+        if query:
+            print("Email sudah ada, silahkan daftarkan email lain!")
+        else:
+            cursor.execute("INSERT INTO users (nama, email) VALUES (?, ?)", (nama, email))
+            db.commit()
+            password = input("Masukkan Password: ")
+            cursor.execute("UPDATE users SET password = ? WHERE email = ?", (password, email))
+            db.commit()
+            print("Registrasi sukses, akan dialihkan ke halaman login!")
+            db.close()
+            return login()
 
-        return True
+def main():
+    hasil_query = None
+    while True:
+        pil = login_menu()
 
-    else:
+        if pil == 1:
+            if hasil_query is None:
+                hasil_query = login()
+                if hasil_query:
+                    print("Redirect to Dashboard user")
+                    sleep(5)
+                else:
+                    print("Login gagal, silahkan coba lagi.")
+            else:
+                print("Anda sudah login, redirect ke Dashboard user.")
+                sleep(5)
 
-        print("Email atau password salah.")
+            from src.dashboard.halaman_user import dashboard
+            dashboard(hasil_query)
+            break
 
-        return False
-
-
-if __name__ == "__main__":
-
-    # Contoh penggunaan fungsi login
-
-    email_input = input("Masukkan email: ")
-
-    password_input = input("Masukkan password: ")
-
-    login(email_input, password_input)
-# def loginOrRegister():
-#     print("Selamat datang, silahkan pilih register/login pada form dibawah ini.")
-#     pil = int(input("Opsi tersedia\n1. Login\n2. Register"))
-
-#     if pil == 1:
-#         print("="*16)
-#         email = input("Masukkan Email: ")
-#         password = input("Masukkan Password: ")
-#         print("="*16)
-#         # Validation
-#         cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
-#         query = cursor.fetchone()
-#         if query:
-#             print("Berhasil login, akan dialihkan ke Home.")
-#             cursor.execute("UPDATE users SET status_logged = 1 WHERE email = ?", (email, ))
-#             db.commit()
-#             return query[1]
-#         else:
-#             print("Email atau password salah.")
-#             return None
-#     elif pil == 2:
-#         while True:
-#             print("="*16)
-#             nama = input("Masukkan Nama Lengkap: ")
-#             email = input("Masukkan Email: ")
-#             # password = input("Masukkan Password: ")
-#             print("="*16)
-
-#             cursor.execute("SELECT * FROM users WHERE email = ?", (email, ))
-#             query = cursor.fetchone()
-#             if query:
-#                 print("Email sudah terdaftar. Gunakan email lain.")
-#                 continue
-#             else:
-#                 password = input("Masukkan Password: ")
-#                 cursor.execute("INSERT INTO users VALUES (?, ?, ?)", (nama, email, password))
-#                 db.commit()
-#                 print("Akun berhasil dibuat.")
-#                 loggedIn()
-#                 break
-
-# name = loginOrRegister()
-# if name:
-#     loggedIn(name)
-# db.close()
+        elif pil == 2:
+            print("Redirect to Register page")
+            sleep(5)
+            register()
+        else:
+            print("Not valid, cek pilihan yang tersedia.")
