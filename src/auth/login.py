@@ -44,9 +44,9 @@ def register():
             password = input("Masukkan Password: ")
             cursor.execute("UPDATE users SET password = ? WHERE email = ?", (password, email))
             db.commit()
-            print("Registrasi sukses, akan dialihkan ke halaman login!")
+            print("Registrasi sukses!")
             db.close()
-            return login()
+            return
 
 def main():
     hasil_query = None
@@ -73,5 +73,7 @@ def main():
             print("Redirect to Register page")
             sleep(5)
             register()
+            print("Silahkan login setelah registrasi")
+            sleep(5)
         else:
             print("Not valid, cek pilihan yang tersedia.")
