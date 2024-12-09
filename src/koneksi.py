@@ -18,6 +18,15 @@ def create_tables():
     ''')
     # CATATAN BUAT YANG KEBAGIAN DATABASE, BUAT CURSOR EXECUTE SETELAH COMMENT INI !
     cursor.execute('''
+    CREATE TABLE IF NOT EXISTS rute (
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
+        from TEXT,
+        to TEXT,
+        bill REAL,
+    )
+    ''')
+    
+    cursor.execute('''
     CREATE TABLE IF NOT EXISTS keberangkatan (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         bus_id INTEGER,
@@ -31,7 +40,5 @@ def create_tables():
     )
     ''')
     
-    
-
     db.commit()
 create_tables()
