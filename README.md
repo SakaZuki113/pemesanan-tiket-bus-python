@@ -3,7 +3,7 @@
 Tugas UAS ini dilakukan dan/atau dibuat oleh:
 
 - [@AhmadSauqiZamzami](https://github.com/AhmadSauqiZamzami)
-- [@username2](https://github.com/username2)
+- [@akbrff](https://github.com/akbrff)
 - [@Sizaaa](https://github.com/Sizaaa)
 - [@mfdlha](https://github.com/mfdlha)
 - [@rafiyandi12](https://github.com/rafiyandi12)
