@@ -2,7 +2,7 @@
 
 Tugas UAS ini dilakukan dan/atau dibuat oleh:
 
-- [@username1](https://github.com/username1)
+- [@AhmadSauqiZamzami](https://github.com/AhmadSauqiZamzami)
 - [@username2](https://github.com/username2)
 - [@Sizaaa](https://github.com/Sizaaa)
 - [@username4](https://github.com/username4)
@@ -22,7 +22,7 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 
 | Nomor | Nama Anggota yang Bekerja | Tugas | Tanggal Selesai |
 |-------|---------------------------| ------------------ | ------------------ |
-| 1     | Nama Anggota 1            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
+| 1     | Ahmad Sauqi Zamzami            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
 | 2     | Nama Anggota 2            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
 | 3     | Muhammad Azis             | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
 | 4     | Nama Anggota 4            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
