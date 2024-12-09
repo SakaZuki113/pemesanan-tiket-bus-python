@@ -17,6 +17,21 @@ def create_tables():
     )
     ''')
     # CATATAN BUAT YANG KEBAGIAN DATABASE, BUAT CURSOR EXECUTE SETELAH COMMENT INI !
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS keberangkatan (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        bus_id INTEGER,
+        rute_id INTEGER,
+        waktu_awal DATETIME,
+        waktu_akhir DATETIME,
+        keterlambatan INTEGER DEFAULT 0,
+        status VARCHAR(50) DEFAULT 'Dijadwalkan',
+        FOREIGN KEY(bus_id) REFERENCES bus(id),
+        FOREIGN KEY(rute_id) REFERENCES rute(id)
+    )
+    ''')
     
+    
+
     db.commit()
 create_tables()
