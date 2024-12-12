@@ -24,7 +24,7 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 |-------|---------------------------| ------------------ | ------------------ |
 | 1     | Ahmad Sauqi Zamzami            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
 | 2     | Muhamad Akbar Febiansyah            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
-| 3     | Muhammad Azis             | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
+| 3     | Muhammad Azis             | Membuat Database untuk Rute dan Bus | KETUA_KELOMPOK_YANG_UPDATE  |
 | 4     | Muhammad Fadhillah Akbar           | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
 | 5     | Rafiyandi                 | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
 | 6     | Satria Nugraha            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
