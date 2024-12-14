@@ -1,5 +1,5 @@
 # 📚 Informasi Projek
-TES
+
 Tugas UAS ini dilakukan dan/atau dibuat oleh:
 
 - [@AhmadSauqiZamzami](https://github.com/AhmadSauqiZamzami)
