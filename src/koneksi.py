@@ -12,7 +12,8 @@ def create_tables():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nama VARCHAR(255),
         email VARCHAR(255) UNIQUE,
-        password VARCHAR(255)
+        password VARCHAR(255),
+        role VARCHAR(10) DEFAULT 'Member' CHECK (role IN ('Member', 'Admin'))
     )
     ''')
     # CATATAN BUAT YANG KEBAGIAN DATABASE, BUAT CURSOR EXECUTE SETELAH COMMENT INI !
