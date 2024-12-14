@@ -25,6 +25,20 @@ def create_tables():
         bill REAL,
     )
     ''')
+
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS bus (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        bus_id INTEGER,
+        kapasitas INTEGER,
+        plat_bus VARCHAR(20) UNIQUE NOT NULL,
+        merek VARCHAR(50) UNIQUE NOT NULL,
+        warna VARCHAR(30),
+        fasilitas TEXT,
+        status VARCHAR(50),
+        bahan_bakar TEXT
+    )                        
+    ''')
     
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS bus (
