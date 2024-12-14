@@ -31,4 +31,4 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 
 ---
 
-
+**© 2024 Kelompok 2 - UAS Projek - Universitas Pamulang**
