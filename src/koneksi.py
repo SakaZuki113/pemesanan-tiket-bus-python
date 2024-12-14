@@ -66,6 +66,18 @@ def create_tables():
         FOREIGN KEY(rute_id) REFERENCES rute(id)
     )
     ''')
+
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS schedule (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        keberangkatan_id INTEGER,
+        tanggal DATE,
+        jam DATETIME,
+        total_seat INTEGER,
+        seat_available INTEGER,
+        FOREIGN KEY(keberangkatan_id) REFERENCES keberangkatan(id)
+    )
+    ''')
     
     db.commit()
 create_tables()
