@@ -12,17 +12,16 @@ def create_tables():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nama VARCHAR(255),
         email VARCHAR(255) UNIQUE,
-        password VARCHAR(255),
-        status_logged INTEGER DEFAULT 0 CHECK (status_logged IN (0, 1))
+        password VARCHAR(255)
     )
     ''')
     # CATATAN BUAT YANG KEBAGIAN DATABASE, BUAT CURSOR EXECUTE SETELAH COMMENT INI !
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS rute (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        from TEXT,
-        to TEXT,
-        bill REAL,
+        "from" TEXT,
+        "to" TEXT,
+        bill REAL
     )
     ''')
 
