@@ -41,20 +41,6 @@ def create_tables():
     ''')
     
     cursor.execute('''
-    CREATE TABLE IF NOT EXISTS bus (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        bus_id INTEGER,
-        kapasitas INTEGER,
-        plat_bus VARCHAR(20) UNIQUE NOT NULL,
-        jenis VARCHAR(50),
-        merek VARCHAR(50) UNIQUE NOT NULL,
-        bahan_bakar VARCHAR(20),
-        warna VARCHAR(30),
-        fasilitas TEXT
-    )
-    ''')
-    
-    cursor.execute('''
     CREATE TABLE IF NOT EXISTS keberangkatan (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         bus_id INTEGER,
