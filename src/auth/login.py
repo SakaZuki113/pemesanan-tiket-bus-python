@@ -30,7 +30,8 @@ def login():
             data['hasil'].append({
                 'id': query[0],
                 'nama': query[1],
-                'email': query[2]
+                'email': query[2],
+                'role': query[4]
             })
             from src.dashboard.halaman_user import dashboard
             dashboard(data['hasil'])
