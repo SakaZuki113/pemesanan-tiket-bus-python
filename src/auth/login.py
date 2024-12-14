@@ -1,5 +1,9 @@
 from src.koneksi import koneksi_db
 from time import sleep
+import getpass
+
+data = {} #Initilisasi array
+data['hasil'] = [] #Buat menyimpan array dalem bentuk object
 
 def login_menu():
     print("="*10)
@@ -15,7 +19,7 @@ def login():
 
     while True:
         email = input("Masukkan Email terdaftar: ")
-        password = input("Masukkan Password: ")
+        password = getpass.getpass("Masukkan Password: ")
 
         cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
         query = cursor.fetchone()
@@ -23,7 +27,14 @@ def login():
         if query:
             print("Berhasil login, dialihkan ke halaman dashboard.")
             db.close()
-            return query
+            data['hasil'].append({
+                'id': query[0],
+                'nama': query[1],
+                'email': query[2]
+            })
+            from src.dashboard.halaman_user import dashboard
+            dashboard(data['hasil'])
+            return data['hasil']
         else:
             print("Email atau password salah, silahkan coba kembali!")
 
@@ -49,24 +60,18 @@ def register():
             return
 
 def main():
-    hasil_query = None
+    from src.dashboard.halaman_user import dashboard
+    # hasil_query = None
     while True:
         pil = login_menu()
 
         if pil == 1:
-            if hasil_query is None:
-                hasil_query = login()
-                if hasil_query:
-                    print("Redirect to Dashboard user")
-                    sleep(5)
-                else:
-                    print("Login gagal, silahkan coba lagi.")
+            if login():
+                pass
             else:
-                print("Anda sudah login, redirect ke Dashboard user.")
-                sleep(5)
-
-            from src.dashboard.halaman_user import dashboard
-            dashboard(hasil_query)
+                login()
+                print("Login gagal, silahkan coba lagi.")
+            
             break
 
         elif pil == 2:
@@ -74,6 +79,14 @@ def main():
             sleep(5)
             register()
             print("Silahkan login setelah registrasi")
+            login()
             sleep(5)
+            break
+        elif pil == 3:
+            print("Sayonara ~")
+            sleep(2)
+            exit()
         else:
             print("Not valid, cek pilihan yang tersedia.")
+
+        break
