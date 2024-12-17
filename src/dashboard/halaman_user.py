@@ -8,11 +8,13 @@ def dashboard(isiData = {}):
         sleep(3)
         login()
     else:
+        id = isiData[0]['id']
         email = isiData[0]['email']
         name = isiData[0]['nama']
         role = isiData[0]['role']
         data = []
         data.append({
+            'id': id,
             'email': email,
             'nama': name,
             'role': role

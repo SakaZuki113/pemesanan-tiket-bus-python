@@ -1,6 +1,7 @@
 import src.dashboard.halaman_user as user
 from time import sleep
 from src.auth.login import login
+from src.hal_bus.bus import main_bus
 
 def main_tiket(data_login = {}):
     if not data_login:
@@ -15,21 +16,23 @@ def main_tiket(data_login = {}):
         print("3. Kembali kehalaman user")
 
         pil = int(input("Masukkan menu angka: "))
+        id = data_login[0]['id']
+        email = data_login[0]['email']
+        name = data_login[0]['nama']
+        role = data_login[0]['role']
+        data = []
+        data.append({
+            'id': id,
+            'email': email,
+            'nama': name,
+            'role': role
+        })
 
         if pil == 1:
-            pass
+            main_bus(data)
         elif pil == 2:
             pass
         elif pil == 3:
-            email = data_login[0]['email']
-            name = data_login[0]['nama']
-            role = data_login[0]['role']
-            data = []
-            data.append({
-                'email': email,
-                'nama': name,
-                'role': role
-            })
             print("Kamu memilih untuk kembali ke dashboard")
             sleep(5)
             print("Redirect success")
