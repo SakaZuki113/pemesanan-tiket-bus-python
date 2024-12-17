@@ -12,7 +12,7 @@ def create_tables():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nama VARCHAR(255),
         email VARCHAR(255) UNIQUE,
-        password VARCHAR(255),
+        password VARCHAzR(255),
         role VARCHAR(10) DEFAULT 'Member' CHECK (role IN ('Member', 'Admin'))
     )
     ''')
@@ -65,6 +65,26 @@ def create_tables():
         FOREIGN KEY(keberangkatan_id) REFERENCES keberangkatan(id)
     )
     ''')
-    
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS pemesanan (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            schedule_id INTEGER,
+            rute_id INTEGER,
+            bus_id INTEGER,
+            jumlah_kursi INTEGER,
+            status VARCHAR(20) DEFAULT 'Pending' CHECK (status IN ('Pending', 'Dikonfirmasi', 'Gagal')),
+            nomor_pemesanan VARCHAR(50) UNIQUE,
+            tanggal_pemesanan DATETIME DEFAULT CURRENT_TIMESTAMP,
+            total_harga REAL,
+            metode_pembayaran VARCHAR(50),
+            FOREIGN KEY(user_id) REFERENCES users(id),
+            FOREIGN KEY(schedule_id) REFERENCES schedule(id),
+            FOREIGN KEY(rute_id) REFERENCES rute(id),
+            FOREIGN KEY(bus_id) REFERENCES bus(id)
+        )
+    ''')
+
     db.commit()
 create_tables()
