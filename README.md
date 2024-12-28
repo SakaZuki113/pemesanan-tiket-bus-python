@@ -76,4 +76,6 @@ Terima kasih untuk anggota kelompok saya yang sudah berkontribusi semuanya T_T, 
 ---
 ## VIDEO
 Akan diupload melalui YouTube Channel: https://www.youtube.com/channel/UC2AVYdwYTa1GMSy2fJm566Q atau https://www.youtube.com/@satrianugraha9008
+---
+
 **© 2024 Kelompok 2 - Projek UAS - Universitas Pamulang**
