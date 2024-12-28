@@ -25,12 +25,12 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 ## 👥 Anggota Kelompok
 | Nomor | Nama Anggota             | Tugas                                                | Tanggal Selesai    |
 |-------|--------------------------|-----------------------------------------------------|--------------------|
-| 1     | Ahmad Sauqi Zamzami      | Editing, Membuat LHP                                | 06/Desember/2024 |
+| 1     | Ahmad Sauqi Zamzami      | Editing, Membuat LHP                                |YANG_ISI_KETUA_KELOMPOK |
 | 2     | Muhamad Akbar Febiansyah | Membuat Flowchart rute, schedules, dan database     | 09/Desember/2024  |
 | 3     | Muhammad Azis            | Membuat Database untuk Rute dan Bus                 | 12/Desember/2024  |
 | 4     | Muhammad Fadhillah Akbar | Membuat Flowchart autentikasi dan tiket             | 07/Desember/2024  |
 | 5     | Rafiyandi                 | Membuat Function dan database schedules, keberangkatan | 18/Desember/2024  |
-| 6     | Satria Nugraha            | Membuat Function user, tiket, flowchart bus dan keberangkatan | 06/Desember/2024 |
+| 6     | Satria Nugraha            | Membuat Function user, tiket, flowchart bus dan keberangkatan | YANG_ISI_KETUA_KELOMPOK |
 
 ---
 
