@@ -35,7 +35,7 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 ---
 
 ## 🔧 Teknologi dan Tools yang Digunakan
-- **Python 3.10+** Teknologi pemrograman yang digunakan
+- **Python 3.13+** Teknologi pemrograman yang digunakan
 - **SQLite3** untuk database
 - **GitHub** sebagai repository
 
@@ -50,8 +50,10 @@ Ikuti langkah-langkah berikut untuk menjalankan projek ini di perangkat Anda:
 $ git clone https://github.com/SakaZuki113/pemesanan-tiket-bus-python.git
 $ cd pemesanan-tiket-bus-python
 ```
+### 2. Download Python
+Download hanya di website resmi python: https://www.python.org/downloads/
 
-### 2. Jalankan Projek
+### 3. Jalankan Projek
 ```bash
 $ python3 main.py
 ```
