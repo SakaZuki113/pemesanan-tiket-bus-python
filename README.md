@@ -61,7 +61,8 @@ $ python3 main.py
 ## 🛠️ Kontribusi & Note
 Mohon maaf bila codingan ini masih belum sempurna karena kita masih dalam tahap pembelajaran juga T_T.
 
-```User Login:
+```
+User Login:
 member
 member
 
@@ -73,5 +74,6 @@ admin
 Terima kasih untuk anggota kelompok saya yang sudah berkontribusi semuanya T_T, alhamdulillah tidak ada yang menumpang nama di anggota kelompok ini hehe. Terima kasih guys!
 
 ---
-
+## VIDEO
+Akan diupload melalui YouTube Channel: https://www.youtube.com/channel/UC2AVYdwYTa1GMSy2fJm566Q atau https://www.youtube.com/@satrianugraha9008
 **© 2024 Kelompok 2 - Projek UAS - Universitas Pamulang**
