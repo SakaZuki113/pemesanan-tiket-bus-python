@@ -25,17 +25,17 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 ## 👥 Anggota Kelompok
 | Nomor | Nama Anggota             | Tugas                                                | Tanggal Selesai    |
 |-------|--------------------------|-----------------------------------------------------|--------------------|
-| 1     | Ahmad Sauqi Zamzami      | Editing, Membuat LHP                                | KETUA_KELOMPOK_YANG_UPDATE |
+| 1     | Ahmad Sauqi Zamzami      | Editing, Membuat LHP                                | 06/Desember/2024 |
 | 2     | Muhamad Akbar Febiansyah | Membuat Flowchart rute, schedules, dan database     | 09/Desember/2024  |
 | 3     | Muhammad Azis            | Membuat Database untuk Rute dan Bus                 | 12/Desember/2024  |
 | 4     | Muhammad Fadhillah Akbar | Membuat Flowchart autentikasi dan tiket             | 07/Desember/2024  |
 | 5     | Rafiyandi                 | Membuat Function dan database schedules, keberangkatan | 18/Desember/2024  |
-| 6     | Satria Nugraha            | Membuat Function user, tiket, flowchart bus dan keberangkatan | KETUA_KELOMPOK_YANG_UPDATE |
+| 6     | Satria Nugraha            | Membuat Function user, tiket, flowchart bus dan keberangkatan | 06/Desember/2024 |
 
 ---
 
 ## 🔧 Teknologi dan Tools yang Digunakan
-- **Python 3.13+** Teknologi pemrogramman yang digunakan
+- **Python 3.10+** Teknologi pemrograman yang digunakan
 - **SQLite3** untuk database
 - **GitHub** sebagai repository
 
@@ -43,7 +43,7 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 
 ## 🚀 Instalasi
 
-Ikuti langkah-langkah berikut untuk menjalankan projek ini di lokal projek:
+Ikuti langkah-langkah berikut untuk menjalankan projek ini di perangkat Anda:
 
 ### 1. Clone Repository
 ```bash
@@ -58,24 +58,26 @@ $ python3 main.py
 
 ---
 
-## 🛠️ Kontribusi & Note
-Mohon maaf bila codingan ini masih belum sempurna karena kita masih dalam tahap pembelajaran juga T_T.
+## 🛠️ Kontribusi & Catatan
+Projek ini masih dalam tahap pembelajaran, sehingga mohon maklum jika terdapat kekurangan. Berikut adalah kredensial untuk login:
 
 ```
 User Login:
-member
-member
+Username: member
+Password: member
 
 Admin Login:
-admin
-admin
+Username: admin
+Password: admin
 ```
 
-Terima kasih untuk anggota kelompok saya yang sudah berkontribusi semuanya T_T, alhamdulillah tidak ada yang menumpang nama di anggota kelompok ini hehe. Terima kasih guys!
+Terima kasih kepada semua anggota kelompok atas kontribusinya. Alhamdulillah, tidak ada yang hanya menumpang nama di kelompok ini. Terima kasih, teman-teman! 😊
 
 ---
-## VIDEO
-Akan diupload melalui YouTube Channel: https://www.youtube.com/channel/UC2AVYdwYTa1GMSy2fJm566Q atau https://www.youtube.com/@satrianugraha9008
----
 
+### 🎥 Video Presentasi
+Video akan kami publishkan melalui YouTube:
+- https://www.youtube.com/@satrianugraha9008
+
+---
 **© 2024 Kelompok 2 - Projek UAS - Universitas Pamulang**
