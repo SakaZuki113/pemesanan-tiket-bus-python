@@ -7,6 +7,7 @@ def koneksi_db():
 
 def create_tables():
     db, cursor = koneksi_db()
+    
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -17,28 +18,30 @@ def create_tables():
     )
     ''')
     # CATATAN BUAT YANG KEBAGIAN DATABASE, BUAT CURSOR EXECUTE SETELAH COMMENT INI !
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS rute (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        "from" TEXT,
-        "to" TEXT,
-        bill REAL
-    )
-    ''')
 
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS bus (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        bus_id INTEGER,
         kapasitas INTEGER,
         plat_bus VARCHAR(20) UNIQUE NOT NULL,
-        merek VARCHAR(50) UNIQUE NOT NULL,
+        merek VARCHAR(50),
         warna VARCHAR(30),
         fasilitas TEXT,
-        status VARCHAR(50),
         bahan_bakar TEXT
     )                        
     ''')
+
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS rute (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        bus_id INTEGER,
+        "from" TEXT,
+        "to" TEXT,
+        bill REAL,
+        FOREIGN KEY(bus_id) REFERENCES bus(id)
+    )
+    ''')
+
     
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS keberangkatan (
@@ -66,5 +69,20 @@ def create_tables():
     )
     ''')
     
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS tiket (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER,
+        schedule_id INTEGER,
+        metode_pembayaran VARCHAR(20) CHECK (metode_pembayaran IN ('Cash', 'Transfer Bank')),
+        jumlah_tiket INTEGER,
+        total_harga REAL,
+        tanggal_pemesanan DATETIME DEFAULT CURRENT_TIMESTAMP,
+        status VARCHAR(20) DEFAULT 'Pending' CHECK (status IN ('Pending', 'Dibayar')),
+        FOREIGN KEY(user_id) REFERENCES users(id),
+        FOREIGN KEY(schedule_id) REFERENCES schedule(id)
+    )
+    ''')
+
     db.commit()
 create_tables()

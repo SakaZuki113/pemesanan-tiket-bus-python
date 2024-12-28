@@ -61,18 +61,11 @@ def register():
             return
 
 def main():
-    from src.dashboard.halaman_user import dashboard
-    # hasil_query = None
     while True:
         pil = login_menu()
 
         if pil == 1:
-            if login():
-                pass
-            else:
-                login()
-                print("Login gagal, silahkan coba lagi.")
-            
+            login()
             break
 
         elif pil == 2:
@@ -81,13 +74,10 @@ def main():
             register()
             print("Silahkan login setelah registrasi")
             login()
-            sleep(5)
             break
         elif pil == 3:
             print("Sayonara ~")
             sleep(2)
             exit()
-        else:
-            print("Not valid, cek pilihan yang tersedia.")
 
         break

@@ -8,11 +8,13 @@ def dashboard(isiData = {}):
         sleep(3)
         login()
     else:
+        id = isiData[0]['id']
         email = isiData[0]['email']
         name = isiData[0]['nama']
         role = isiData[0]['role']
         data = []
         data.append({
+            'id': id,
             'email': email,
             'nama': name,
             'role': role
@@ -26,19 +28,17 @@ def dashboard(isiData = {}):
             print(f"Selamat datang {name}!")
             print("\nSilahkan pilih menu ini: ")
             print("1. Menu Ticket")
-            print("2. Menu Bus")
-            print("3. Menu Rute")
-            print("4. Logout")
+            print("2. Menu Rute")
+            print("3. Logout")
             pil = int(input("Masukkan angka untuk memilih menu: "))
 
             if pil == 1:
                 import src.hal_tiket.tiket as tiket
                 tiket.main_tiket(data)
             elif pil == 2:
-                pass
+                import src.hal_rute.rute as rute
+                rute.main_rute(data)
             elif pil == 3:
-                pass
-            elif pil == 4:
                 print("Kamu akan logout")
                 print("Menghapus data query dan lainnya...")
                 data.clear()

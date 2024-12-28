@@ -1,4 +1,4 @@
-# 📚 Informasi Projek
+# 📚 Projek UAS Kelompok 2 - Algoritma & Pemrograman I
 
 Tugas UAS ini dilakukan dan/atau dibuat oleh:
 
@@ -11,24 +11,67 @@ Tugas UAS ini dilakukan dan/atau dibuat oleh:
 
 ---
 
-**📅 Tanggal Mulai:** 06/12/2024  
-**📅 Tanggal Selesai:** Pertemuan ke 21 Algoritma dan Pemrogramman I
+## 📅 Jadwal Projek
+- **Tanggal Mulai:** 06/12/2024  
+- **Tanggal Selesai:** UAS Algoritma & Pemrogramman I
 
 ---
 
-**👨‍🏫 Nama Dosen: Niki Ratama, S.Kom., M.Kom** 
-
-**👥 Nama Anggota Kelompok:**
-
-| Nomor | Nama Anggota yang Bekerja | Tugas | Tanggal Selesai |
-|-------|---------------------------| ------------------ | ------------------ |
-| 1     | Ahmad Sauqi Zamzami            | ISI_TUGAS_SESUAI_PDF | KETUA_KELOMPOK_YANG_UPDATE  |
-| 2     | Muhamad Akbar Febiansyah            | Membuat Flowchart rute, dan schedules, dan database schedules, keberangkatan | KETUA_KELOMPOK_YANG_UPDATE  |
-| 3     | Muhammad Azis             | Membuat Database untuk Rute dan Bus | 12/Desember/2024  |
-| 4     | Muhammad Fadhillah Akbar           | Membuat Flowchart authentikasi dan tiket | 07/Desember/2024  |
-| 5     | Rafiyandi                 | Membuat Function dan database schedules, dan keberangkatan | KETUA_KELOMPOK_YANG_UPDATE  |
-| 6     | Satria Nugraha            | Membuat Function user, tiket, dan flowchart bus dan keberangkatan| KETUA_KELOMPOK_YANG_UPDATE  |
+## 👨‍🏫 Nama Dosen
+**Niki Ratama, S.Kom., M.Kom**
 
 ---
 
-**© 2024 Kelompok 2 - UAS Projek - Universitas Pamulang**
+## 👥 Anggota Kelompok
+| Nomor | Nama Anggota             | Tugas                                                | Tanggal Selesai    |
+|-------|--------------------------|-----------------------------------------------------|--------------------|
+| 1     | Ahmad Sauqi Zamzami      | Editing, Membuat LHP                                | KETUA_KELOMPOK_YANG_UPDATE |
+| 2     | Muhamad Akbar Febiansyah | Membuat Flowchart rute, schedules, dan database     | 09/Desember/2024  |
+| 3     | Muhammad Azis            | Membuat Database untuk Rute dan Bus                 | 12/Desember/2024  |
+| 4     | Muhammad Fadhillah Akbar | Membuat Flowchart autentikasi dan tiket             | 07/Desember/2024  |
+| 5     | Rafiyandi                 | Membuat Function dan database schedules, keberangkatan | 18/Desember/2024  |
+| 6     | Satria Nugraha            | Membuat Function user, tiket, flowchart bus dan keberangkatan | KETUA_KELOMPOK_YANG_UPDATE |
+
+---
+
+## 🔧 Teknologi dan Tools yang Digunakan
+- **Python 3.13+** Teknologi pemrogramman yang digunakan
+- **SQLite3** untuk database
+- **GitHub** sebagai repository
+
+---
+
+## 🚀 Instalasi
+
+Ikuti langkah-langkah berikut untuk menjalankan projek ini di lokal projek:
+
+### 1. Clone Repository
+```bash
+$ git clone https://github.com/SakaZuki113/pemesanan-tiket-bus-python.git
+$ cd pemesanan-tiket-bus-python
+```
+
+### 2. Jalankan Projek
+```bash
+$ python3 main.py
+```
+
+---
+
+## 🛠️ Kontribusi & Note
+Mohon maaf bila codingan ini masih belum sempurna karena kita masih dalam tahap pembelajaran juga T_T.
+
+```User Login:
+member
+member
+
+Admin Login:
+admin
+admin
+```
+
+Terima kasih untuk anggota kelompok saya yang sudah berkontribusi semuanya T_T, alhamdulillah tidak ada yang menumpang nama di anggota kelompok ini hehe. Terima kasih guys!
+
+---
+
+**© 2024 Kelompok 2 - Projek UAS - Universitas Pamulang**
