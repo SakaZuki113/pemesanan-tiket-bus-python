@@ -1,5 +1,3 @@
-# FLOWCHART TIKET HARUS DIGANTI - blm
-
 from src.koneksi import koneksi_db
 import src.dashboard.halaman_user as user
 from time import sleep

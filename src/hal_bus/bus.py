@@ -1,8 +1,8 @@
-import src.dashboard.halaman_user as user
 from time import sleep
 from src.auth.login import login
 from src.koneksi import koneksi_db
 from tabulate import tabulate
+from src.dashboard.halaman_user import dashboard
 
 def main_bus(data_login={}):
     if not data_login:
@@ -12,8 +12,6 @@ def main_bus(data_login={}):
         login()
     else:
         id_user = data_login[0]['id']
-        name = data_login[0]['nama']
-        role = data_login[0]['role']
         rute_id = data_login[1]['rute_id'][0]
 
         if not rute_id:
@@ -62,88 +60,57 @@ def main_bus(data_login={}):
                 print("Metode pembayaran tidak valid. Pemesanan dibatalkan.")
                 sleep(3)
                 return
-
+            
             total_harga = jadwal_pilihan[10] * jumlah_tiket
 
-            cursor.execute('''
-                INSERT INTO tiket (user_id, schedule_id, metode_pembayaran, jumlah_tiket, total_harga)
-                VALUES (?, ?, ?, ?, ?)
-            ''', (id_user, pilihan_jadwal, metode_pembayaran, jumlah_tiket, total_harga))
+            if metode_pembayaran == 'Transfer Bank':
+                print("Silahkan transfer ke 0000221 bank BTCSA a.n Tiket Bus")
+                upload = input("Silahkan upload bukti tf: ")
 
-            cursor.execute('''
-                UPDATE schedule
-                SET seat_available = seat_available - ?
-                WHERE id = ?
-            ''', (jumlah_tiket, pilihan_jadwal))
+                if not upload:
+                    cursor.execute('''
+                        INSERT INTO tiket (user_id, schedule_id, metode_pembayaran, jumlah_tiket, total_harga)
+                        VALUES (?, ?, ?, ?, ?)
+                        ''', (id_user, pilihan_jadwal, metode_pembayaran, jumlah_tiket, total_harga))
+                    cursor.execute('''
+                        UPDATE schedule
+                        SET seat_available = seat_available - ?
+                        WHERE id = ?
+                    ''', (jumlah_tiket, pilihan_jadwal))
+                    db.commit()
+                    print("Tiket berhasil dipesan, dan pembayaran masih pending. Jangan lupa untuk dibayar.")
+                    print("Redirecting to dashboard...")
+                    sleep(3)
+                    dashboard(data_login)
+                else:
+                    cursor.execute('''
+                        INSERT INTO tiket (user_id, schedule_id, metode_pembayaran, jumlah_tiket, total_harga, status)
+                        VALUES (?, ?, ?, ?, ?)
+                        ''', (id_user, pilihan_jadwal, metode_pembayaran, jumlah_tiket, total_harga, 'Dibayar'))
+                    cursor.execute('''
+                        UPDATE schedule
+                        SET seat_available = seat_available - ?
+                        WHERE id = ?
+                    ''', (jumlah_tiket, pilihan_jadwal))
+                    db.commit()
+                    print("Tiket berhasil dipesan dan pembayaran sukses!")
+                    print("Redirecting to dashboard...")
+                    sleep(3)
+                    dashboard(data_login)
+            else:
+                cursor.execute('''
+                    INSERT INTO tiket (user_id, schedule_id, metode_pembayaran, jumlah_tiket, total_harga)
+                    VALUES (?, ?, ?, ?, ?)
+                ''', (id_user, pilihan_jadwal, metode_pembayaran, jumlah_tiket, total_harga))
 
-            db.commit()
-            print("Tiket berhasil dipesan!")
-            print("Redirecting to dashboard...")
-            sleep(3)
-            from src.dashboard.halaman_user import dashboard
-            dashboard(data_login)
+                cursor.execute('''
+                    UPDATE schedule
+                    SET seat_available = seat_available - ?
+                    WHERE id = ?
+                ''', (jumlah_tiket, pilihan_jadwal))
 
-
-
-# import src.dashboard.halaman_user as user
-# from time import sleep
-# from src.auth.login import login
-# from src.koneksi import koneksi_db
-# from tabulate import tabulate
-
-# def main_bus(data_login = {}):
-#     if not data_login:
-#         print("Kamu belum login! silahkan login dulu dong...")
-#         print("Redirect 3 seconds...")
-#         sleep(3)
-#         login()
-#     else:
-#         id = data_login[0]['id']
-#         email = data_login[0]['email']
-#         name = data_login[0]['nama']
-#         role = data_login[0]['role']
-#         rute_id = data_login[0]['rute_id']
-#         data = []
-#         data.append({
-#             'id': id,
-#             'email': email,
-#             'nama': name,
-#             'role': role
-#         })
-#         if not rute_id:
-#             print("Rute belum dipilih. Kembali ke menu Rute..")
-#             sleep(3)
-#             from src.hal_rute.rute import main_rute
-#             main_rute(data)
-#         elif rute_id:
-#             print("\nMenu pilihan:")
-#             print("1. Pesan Bus")
-#             print("2. Kembali ke halaman user")
-
-#             pil = int(input("Masukkan menu angka: "))
-
-#             if pil == 1:
-#                 cursor = koneksi_db()
-#                 cursor.execute('''
-#                                 SELECT * FROM bus
-#                                 ''')
-#                 row = cursor.fetchall()
-#                 if row:
-#                     print(tabulate(row, headers=["ID", "Kapasitas", "Plat Bus", "Merek Bus", "Warna Bus", "Fasilitas Bus", "Tipe Bahan Bakar Bus"], tablefmt="github", numalign="center", stralign="center"))
-#                     pilihan = int(input("Ingin memesan ID Bus berapa? "))
-#                     bus_pilihan = next((buses for buses in row if buses[0] == pilihan), None)
-
-#                     if bus_pilihan:
-
-#                         # print(f"Kamu telah memilih bus {bus_pilihan}")
-                        
-#             elif pil == 2:
-#                 print("Kamu memilih untuk kembali ke dashboard")
-#                 sleep(5)
-#                 print("Redirect success")
-#                 user.dashboard(data)
-#         else:
-#             print("Ada yang aneh... Kami logout-kan dulu ya")
-#             data.clear()
-#             sleep(3)
-#             exit()
+                db.commit()
+                print("Tiket berhasil dipesan dan jangan lupa dibayar melalui loket.")
+                print("Redirecting to dashboard...")
+                sleep(3)
+                dashboard(data_login)

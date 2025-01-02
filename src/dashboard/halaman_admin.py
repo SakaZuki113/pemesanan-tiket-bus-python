@@ -41,15 +41,6 @@ def dashboard_admin(data = {}):
 
                 if hasil:
                     print("History Tiket:")
-                    # for row in hasil:
-                    #     print(f'''
-                    #     Tiket ID         : {row[0]}
-                    #     Nama User        : {row[1]}
-                    #     Jumlah Tiket     : {row[2]}
-                    #     Metode Pembayaran: {row[3]}
-                    #     Tanggal Pemesanan: {row[4]}
-                    #     Total Harga      : {row[5]}
-                    #     ''')
                     print(tabulate(hasil, headers=["Tiket ID", "Nama User", "Jumlah Tiket", "Metode Pembayaran", "Tanggal Pemesanan", "Total Harga", "Status"], tablefmt="github", numalign="center", stralign="center"))
                     
             elif pil == 2:
@@ -66,12 +57,6 @@ def dashboard_admin(data = {}):
 
                 if hasil:
                     print("\nTiket Sebelum Diperbarui:")
-                    # for row in hasil:
-                    #     print(f'''
-                    #     Tiket ID         : {row[0]}
-                    #     Nama User        : {row[1]}
-                    #     Status           : {row[2]}
-                    #     ''')
                     print(tabulate(hasil, headers=["Tiket ID", "Nama User", "Total Harga", "Status"], tablefmt="github", numalign="center", stralign="center"))
 
                 else:
@@ -111,15 +96,6 @@ def dashboard_admin(data = {}):
 
                 if hasil:
                     print("\nTiket Sebelum Dihapus:")
-                    # for row in hasil:
-                    #     print(f'''
-                    #     Tiket ID         : {row[0]}
-                    #     Nama User        : {row[1]}
-                    #     Status           : {row[2]}
-                    #     Jumlah Tiket     : {row[3]}
-                    #     Total Harga      : {row[4]}
-                    #     Tanggal Pemesanan: {row[5]}
-                    #     ''')
                     print(tabulate(hasil, headers=["Tiket ID", "Nama User", "Status", "Jumlah Tiket", "Total Harga", "Tanggal Pemesanan"], tablefmt="github", numalign="center", stralign="center"))
 
                 else:
@@ -159,7 +135,6 @@ def dashboard_admin(data = {}):
                 print("\nKamu memilih untuk menambahkan data Bus. Silahkan masukkan Informasi yang dibutuhkan dibawah ini.")
                 while True:
                     kapasitas = int(input("Masukkan Kapasitas dari Bus yang akan dibuat: "))
-                    # plat_bus = input("Masukkan Plat Bus yang ingin didaftarkan: ")
                     merek = input("Masukkan Merek Bus: ")
                     warna = input("Masukkan detail warna Bus: ")
                     fasilitas = input("Masukkan fasilitas apa saja yang dimiliki Bus: ")
@@ -172,13 +147,11 @@ def dashboard_admin(data = {}):
                     text = "NUSANTARA"
                     random_num = str(random.randint(000,999))
                     plat_bus = f"{random_num} - {text} - {tanggal}"
-                    # print(plat_bus)
                     cursor.execute("SELECT plat_bus FROM bus WHERE plat_bus = ?", (plat_bus,))
                     rows = cursor.fetchall()
                     if rows:
                         print(f"Mohon maaf, plat bus sudah tersedia. Masukkan ulang data bus agar di re-generate")
                     else:
-                        # print("Tidak ada data")
                         print("Kami ingin konfirmasi data berikut ini: ")
                         print("="*20)
                         print(f"Kapasitas Penumpang: {kapasitas}")
@@ -188,16 +161,16 @@ def dashboard_admin(data = {}):
                         print(f"Fasilitas Bus: {fasilitas}")
                         print(f"Bahan Bakar Bus: {bahan_bakar}")
                         print("="*20)
-                        konfirm = input("Apakah data ini sudah sesuai? (Y/T): ")
+                        konfirm = input("Apakah data ini sudah sesuai? (Y/T): ").capitalize()
 
-                        if konfirm == "y".lower():
+                        if konfirm == "Y":
                             print("Baiklah data akan kami masukkan ke database")
                             sleep(3)
                             cursor.execute("INSERT INTO bus VALUES (null, ?, ?, ?, ?, ?, ?)", (kapasitas, plat_bus, merek, warna, fasilitas, bahan_bakar))
                             db.commit()
                             print("Sukses. Data telah ditambahkan ke database, untuk mengeceknya silahkan ke menu 1")
                             break
-                        elif konfirm == "t".lower():
+                        elif konfirm == "T":
                             print("\nSilahkan masukkan data lagi dibawah ini: ")
                         
                     # print("Semua text terisi")
@@ -212,7 +185,6 @@ def dashboard_admin(data = {}):
                     update = int(input("Masukkan ID Bus untuk mengupdate data: "))
                     bus_dipilih = next((buses for buses in hasil if buses[0] == update), None)
                     if bus_dipilih:
-                        # print("Data sama")
                         while True:
                             print("="*15)
                             print(f"Kamu akan update data dari ID Bus: {bus_dipilih[0]}")
@@ -327,7 +299,6 @@ def dashboard_admin(data = {}):
                 if hasil:
                     print(tabulate(hasil, headers=["ID", "Bus ID", "Tujuan Awal", "Tujuan Akhir", "Harga Rute"], tablefmt="github", numalign="center", stralign="center"))
             elif pil == 3:
-                # cursor.execute("SELECT id FROM bus")
                 cursor.execute("SELECT rute.id, bus.id FROM rute JOIN bus ON bus.id = rute.bus_id")
                 found_them = cursor.fetchall()
 
@@ -350,7 +321,7 @@ def dashboard_admin(data = {}):
                             print(tabulate(hasil, headers=["ID Keberangkatan", "Bus ID", "Rute ID", "Waktu Awal", "Waktu Akhir"], tablefmt="github", numalign="center", stralign="center"))
                             keberangkatan_id = int(input("Masukkan ID Keberangkatan: "))
                             tgl = input("Masukkan tanggal: (format: DD-MM-YYYY): ")
-                            jam = input("Masukkan tanggal dan waktu Akhir: (format: HH:MM:SS): ")
+                            jam = input("Masukkan waktu: (format: HH:MM:SS): ")
                             conv = datetime.strptime(tgl, "%d-%m-%Y")
                             conv2 = datetime.strptime(jam, "%H:%M:%S")
                             total_seat = int(input("Masukkan Total Penumpang: "))
